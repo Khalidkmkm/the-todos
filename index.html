@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>My To-do list</title>
   </head>
   <body>
     <div id="app"></div>
+    <div class="container">
+      <h1>To-Do list</h1>
+      <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Add your task" />
+        <button id="addButton">Add</button>
+      </form>
+      <ul id="taskList"></ul>
+      <button id="clearAllTask">Clear All</button>
+    </div>
+  
     <script type="module" src="/src/main.ts"></script>
   </body>
-</html>
+  </html>

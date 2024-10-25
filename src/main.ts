@@ -39,13 +39,13 @@ function createTaskHtml(tasks: Task[]): void {
     li.innerText = task.description;
 
     li.onclick = () => {
-      li.classList.toggle('completed'); // Lägg till/ta bort linje genom texten
+      li.classList.toggle('completed'); // Den lägger till  samt tar bort linhjen genom texten 
     };
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Delete';
     deleteButton.onclick = () => {
-      tasks.splice(i, 1); // Ta bort uppgiften
+      tasks.splice(i, 1); //  Den tarbort uppgiften
       createTaskHtml(tasks); // Uppdatera listan
       saveTasksToLocalStorage(); // Uppdatera localStorage
     };
@@ -55,7 +55,7 @@ function createTaskHtml(tasks: Task[]): void {
     editButton.onclick = () => {
       const inputField = document.createElement('input');
       inputField.type = 'text';
-      inputField.value = task.description; // Fyll i nuvarande uppgiftsbeskrivning
+      inputField.value = task.description; // Fyller i nuvarande uppgiftsbeskrivning
 
       const saveButton = document.createElement('button');
       saveButton.innerText = 'Save';
@@ -82,12 +82,12 @@ function createTaskHtml(tasks: Task[]): void {
   }
 }
 
-// Spara uppgifter i localStorage
+// Sparar uppgifter i localStorage
 function saveTasksToLocalStorage(): void {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Ladda uppgifter från localStorage
+// Laddar uppgifter från localStorage
 function loadTasksFromLocalStorage(): Task[] {
   const tasksFromStorage = localStorage.getItem('tasks');
   return tasksFromStorage ? JSON.parse(tasksFromStorage) : [];
